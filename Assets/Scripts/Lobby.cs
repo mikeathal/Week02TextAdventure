@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class TimeTravelTextAdventure : MonoBehaviour {
+public class Lobby : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
