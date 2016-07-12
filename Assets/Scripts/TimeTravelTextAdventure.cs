@@ -26,7 +26,7 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 			} else if (Input.GetKeyDown (KeyCode.A)) {
 				currentRoom = "Atlantis";
 			} else if (Input.GetKeyDown (KeyCode.R)) {
-				currentRoom = "The Rennaisance";
+				currentRoom = "The Renaissance";
 			} else if (Input.GetKeyDown (KeyCode.E)) {
 				currentRoom = "Earth 2107 A.D.";
 			} else if (Input.GetKeyDown (KeyCode.N)) {
@@ -56,8 +56,8 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 			
-		} else if (currentRoom == "The Rennaisance") {
-			textBuffer += "\n\nOff to The Rennaisance, Lords and Ladies!";
+		} else if (currentRoom == "The Renaissance") {
+			textBuffer += "\n\nOff to The Renaissance, Lords and Ladies!";
 			textBuffer += "\n\nYou exit your time machine right in the middle of a market.";
 			textBuffer += "\nThere's a man selling coconuts that he claims to have found, and another man with a cart yelling 'BRING OUT YER DEAD!'";
 			textBuffer += "\n\nAmidst the crowded streets, you find an 'A' shaped pendant on the ground. It looks shiny so you decide to take it!";
@@ -67,9 +67,9 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 
-		} else if (currentRoom = "Earth 2107 A.D.") {
+		} else if (currentRoom == "Earth 2107 A.D.") {
 			textBuffer += "\n\nUgh... I SUPPOSE you can go to Earth.";
-			textBuffer += "\n\nThe moment you step outside, see lazers are flying everywhere across a desolate wasteland. ";
+			textBuffer += "\n\nThe moment you step outside, see lazers are flying a desolate wasteland. ";
 			textBuffer += "The people of Earth are at war with each other again.  It seems like not much as changed in 100 years.";
 
 			textBuffer += "\n\nOn the bright side, you find a glowing fuel box that could probably fit in your Hyperdrive Engine!";
