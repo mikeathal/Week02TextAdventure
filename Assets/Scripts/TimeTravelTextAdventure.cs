@@ -9,6 +9,7 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 
 		bool hasKingsPendant = false;
 		bool hasHyperDrive = false;
+
 	void Update () {
 		string textBuffer = "You are in: " + currentRoom;
 
@@ -23,13 +24,13 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 
 			if (Input.GetKeyDown (KeyCode.J)) { // if player pushes J...
 				currentRoom = "Jurassic Era";
-			} else if (Input.GetKeyDown (KeyCode.A)) {
+			} else if (Input.GetKeyDown (KeyCode.A)) {// if player pushes A...
 				currentRoom = "Atlantis";
-			} else if (Input.GetKeyDown (KeyCode.R)) {
+			} else if (Input.GetKeyDown (KeyCode.R)) {// if player pushes R...
 				currentRoom = "The Renaissance";
-			} else if (Input.GetKeyDown (KeyCode.E)) {
+			} else if (Input.GetKeyDown (KeyCode.E)) {// if player pushes E...
 				currentRoom = "Earth 2107 A.D.";
-			} else if (Input.GetKeyDown (KeyCode.N)) {
+			} else if (Input.GetKeyDown (KeyCode.N)) {// if player pushes N...
 				currentRoom = "Nebulo 9";
 			}
 
@@ -52,6 +53,7 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 				textBuffer += "King Raigen shows all around the city.  There are fish with colors the likes of which you've never seen! "; 
 				textBuffer += "Fortunately all of the sharks are domesticated too.";
 			}
+
 			textBuffer += "\n\nPress [C] to go back to the Control Room.";
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
@@ -79,6 +81,21 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 
+		} else if (currentRoom == "Nebulo 9") {
+			textBuffer += "\n\nLet's go to Nebulo 9.  Which is.... IN SPAAAAAAAAACE!!!";
+
+			if (hasHyperDrive == false) {
+				textBuffer += "\n\nUnfortunately Nebulo 9 is so far in the future that your time machine doesn't have the power to travel there.";
+			} else {
+				textBuffer += "\n\nYou travel to Nebulo 9 in the blink of an eye! When you arrive there are a bunch of dudes playing the best guitar solos you've ever heard. ";
+				textBuffer += "Everyone you pass by greets you by snapping and pointing their fingers while saying 'Hope you're excellent bro!'";
+				textBuffer += "\n\nThe future seems totally radical... dude.";
+			}
+
+			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+			if (Input.GetKeyDown (KeyCode.C))
+				currentRoom = "Control Room";
+			
 		}
 		GetComponent<Text>().text = textBuffer;
 	}
