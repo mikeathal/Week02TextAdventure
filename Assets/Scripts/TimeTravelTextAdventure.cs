@@ -5,20 +5,17 @@ using UnityEngine.UI;
 
 public class TimeTravelTextAdventure : MonoBehaviour {
 	
-string currentRoom = "Lobby"; // remembers our current location in world
+	string currentRoom = "Lobby"; // remembers our current location in world
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+		bool hasStudentID = false;
 
-	void Update () {
+		void Update () {
 		// if I declare a variable inside Update(),
 		// then I can ONLY use this variable inside Update() !!
 		// also, a "buffer" is a staging area to prepare data
 		string textBuffer = "You are currently in: " + currentRoom;
 
-		if ( currentRoom == "Lobby" ) {
+		if (currentRoom == "Lobby") {
 			// typing "\n" in a string means "line break"
 			textBuffer += "\nYou see the security guard.";
 			// the line of code below is the SAME as the line of code above
@@ -32,8 +29,14 @@ string currentRoom = "Lobby"; // remembers our current location in world
 			} else if (Input.GetKeyDown (KeyCode.S)) {
 				currentRoom = "Outside";
 			}
-		} else if ( currentRoom == "Elevators" ) {
-			// all of your ELEVATORS code will go here later!
+		} else if (currentRoom == "Elevators") {
+			textBuffer += "\nYou're waiting.";
+			// But which room will let the user set "hastStudentID" to true?
+			if (hasStudentID == false) {
+				textBuffer += "\nYou can't go in without your ID card, though...";
+			} else {
+				textBuffer += "\nYou swipe your Student ID and the guard smiles.";
+			}
 		} else if ( currentRoom == "Outside" ) {
 			// all of your OUTSIDE code will go here later!
 		}
