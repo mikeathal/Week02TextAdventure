@@ -11,14 +11,15 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 		bool hasHyperDrive = false;
 
 	void Update () {
-		string textBuffer = "You are in: " + currentRoom;
 
-		if (currentRoom == "Control Room") {
+		string textBuffer = "You are in: " + currentRoom; // shows current location to the player
+
+		if (currentRoom == "Control Room") { // Introduction text
 			textBuffer += "\n\nYou are a time traveler, exploring the realms of time and space for fun.";
 			textBuffer += "\n\nWhen would you like to go?";
 			textBuffer += "\nPress [J] to go to the Jurassic Era";
 			textBuffer += "\nPress [A] to go to the Ancient City of Atlantis";
-			textBuffer += "\nPress [R] to go to the Rennaisance";
+			textBuffer += "\nPress [R] to go to the Renaissance";
 			textBuffer += "\nPress [E] to go to Earth 2107 A.D.";
 			textBuffer += "\nPress [N] to go to the Nebulo 9";
 
@@ -34,18 +35,19 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 				currentRoom = "Nebulo 9";
 			}
 
-		} else if (currentRoom == "Jurassic Era") {
+		} else if (currentRoom == "Jurassic Era") { // Jurassic Era Room
 			textBuffer += "\n\nJurassic Era it is!";
 			textBuffer += "\n\nYou walk out of your time machine and a T-Rex is staring you in the face.";
 			textBuffer += "\nMaybe this wasn't a good idea...";
-			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+
+			textBuffer += "\n\nPress [C] to go back to the Control Room."; // Prompt to return to the main room
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 
-		} else if (currentRoom == "Atlantis") {
+		} else if (currentRoom == "Atlantis") { // Atlantis Room - The first gate is here.  It's unlocked with a key from the Renissance Room
 			textBuffer += "\n\nTo Atlantis then! Don't forget your bathingsuit!";
 
-			if (hasKingsPendant == false) {
+			if (hasKingsPendant == false) { // First Gate checking for key
 				textBuffer += "\n\nThe gates are locked.  There seems to be a pendant shaped hole in the door. ";
 				textBuffer += "What a strange looking mechanism...";
 			} else {
@@ -54,37 +56,37 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 				textBuffer += "Fortunately all of the sharks are domesticated too.";
 			}
 
-			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+			textBuffer += "\n\nPress [C] to go back to the Control Room."; // Prompt to return to the main room
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 			
-		} else if (currentRoom == "The Renaissance") {
-			textBuffer += "\n\nOff to The Renaissance, Lords and Ladies!";
+		} else if (currentRoom == "The Renaissance") { // Renaissance Room - First key is here
+			textBuffer += "\n\nOff to the Renaissance, Lords and Ladies!";
 			textBuffer += "\n\nYou exit your time machine right in the middle of a market.";
 			textBuffer += "\nThere's a man selling coconuts that he claims to have found, and another man with a cart yelling 'BRING OUT YER DEAD!'";
 			textBuffer += "\n\nAmidst the crowded streets, you find an 'A' shaped pendant on the ground. It looks shiny so you decide to take it!";
-			hasKingsPendant = true;
+			hasKingsPendant = true; // Pick up first key
 
-			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+			textBuffer += "\n\nPress [C] to go back to the Control Room."; // Prompt to return to the main room
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 
-		} else if (currentRoom == "Earth 2107 A.D.") {
+		} else if (currentRoom == "Earth 2107 A.D.") { // Earth 2107 A.D. Room - Second key is here
 			textBuffer += "\n\nUgh... I SUPPOSE you can go to Earth.";
 			textBuffer += "\n\nThe moment you step outside, see lazers are flying a desolate wasteland. ";
 			textBuffer += "The people of Earth are at war with each other again.  It seems like not much as changed in 100 years.";
 
 			textBuffer += "\n\nOn the bright side, you find a glowing fuel box that could probably fit in your Hyperdrive Engine!";
-			hasHyperDrive = true;
+			hasHyperDrive = true; // Pick up second key
 
-			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+			textBuffer += "\n\nPress [C] to go back to the Control Room."; // Prompt to return to the main room
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 
-		} else if (currentRoom == "Nebulo 9") {
+		} else if (currentRoom == "Nebulo 9") { // Nebulo 9 room - Second Gate is here.  It's unlocked with a key from the Earth 2107 A.D. Room
 			textBuffer += "\n\nLet's go to Nebulo 9.  Which is.... IN SPAAAAAAAAACE!!!";
 
-			if (hasHyperDrive == false) {
+			if (hasHyperDrive == false) { // Second Gate checking for key
 				textBuffer += "\n\nUnfortunately Nebulo 9 is so far in the future that your time machine doesn't have the power to travel there.";
 			} else {
 				textBuffer += "\n\nYou travel to Nebulo 9 in the blink of an eye! When you arrive there are a bunch of dudes playing the best guitar solos you've ever heard. ";
@@ -92,7 +94,7 @@ public class TimeTravelTextAdventure : MonoBehaviour {
 				textBuffer += "\n\nThe future seems totally radical... dude.";
 			}
 
-			textBuffer += "\n\nPress [C] to go back to the Control Room.";
+			textBuffer += "\n\nPress [C] to go back to the Control Room."; // Prompt to return to the main room
 			if (Input.GetKeyDown (KeyCode.C))
 				currentRoom = "Control Room";
 			
