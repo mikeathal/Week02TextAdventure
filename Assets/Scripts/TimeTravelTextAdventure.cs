@@ -3,6 +3,8 @@ using System.Collections;
 
 using UnityEngine.UI;
 
+public class TimeTravelTextAdventure : MonoBehaviour {
+	
 string currentRoom = "Lobby"; // remembers our current location in world
 
 	// Use this for initialization
@@ -27,4 +29,4 @@ string currentRoom = "Lobby"; // remembers our current location in world
 		// we need to do this at the end, otherwise we'll display text too soon
 		GetComponent<Text>().text = textBuffer;
 	}// CLOSES OUT UPDATE() scope
-
+}
